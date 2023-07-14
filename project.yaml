@@ -1,0 +1,14 @@
+parameters: {}
+environment: {}
+packages:
+  - name: view
+    environment:
+      DATABASE_URL: "${DATABASE_URL}"
+
+    parameters: {}
+    actions:
+      - name: refresh
+        main: ''
+        runtime: 'go:default'
+        environment: {}
+        parameters: {}
