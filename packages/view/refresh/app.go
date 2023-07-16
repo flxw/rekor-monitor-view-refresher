@@ -9,6 +9,7 @@ import (
 )
 
 func Main() {
+	fmt.Println("Hello World!")
 	databaseUrl := os.Getenv("DATABASE_URL")
 	db, err := sql.Open("postgres", databaseUrl)
 	if err != nil {

@@ -6,9 +6,16 @@ packages:
       DATABASE_URL: "${DATABASE_URL}"
 
     parameters: {}
-    actions:
-      - name: refresh
-        main: ''
-        runtime: 'go:default'
-        environment: {}
-        parameters: {}
+    functions:
+    - name: refresh
+      main: ''
+      runtime: 'go:default'
+      environment: {}
+      parameters: {}
+      triggers:
+      - name: trigger-hello
+        sourceType: scheduler
+        sourceDetails:
+          cron: "* * * * *"
+          withBody:
+            name: 'sammy'
